@@ -1,0 +1,54 @@
+import { getTiles } from '@/lib/getTiles';
+import Link from 'next/link';
+
+const FeaturedTiles = async () => {
+  try {
+    const data = await getTiles('http://127.0.0.1:5000/tiles');
+
+    const featured = data.slice(0, 4);
+
+    return (
+      <section className="py-16 bg-[#fff]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold text-primary">Featured Tiles</h2>
+            <p className="text-gray-500 mt-2">Explore our most popular selections</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featured.map((tile) => (
+              <div
+                key={tile.id}
+                className="card bg-base-100 shadow-2xl hover:shadow-2xl transition-all"
+              >
+                <figure className="h-48 overflow-hidden">
+                  <img
+                    src={tile.image}
+                    alt={tile.title}
+                    className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+                  />
+                </figure>
+
+                <div className="p-5 bg-[#e2dede] text-white">
+                  <h2 className="font-bold text-lg truncate">{tile.title}</h2>
+                  <p className="text-xs uppercase">{tile.category}</p>
+                  <p className="text-sm font-semibold mt-1">${tile.price}</p>
+
+                  <div className="mt-4">
+                    <Link href={`/tile/${tile.id}`} className="btn btn-primary btn-sm w-full">
+                      View Details
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  } catch (error) {
+    return <p>Error loading tiles</p>;
+  }
+};
+
+export default FeaturedTiles;
