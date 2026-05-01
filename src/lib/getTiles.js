@@ -1,11 +1,17 @@
 export async function getTiles() {
-  const res = await fetch('http://127.0.0.1:5000/tiles', {
-    cache: 'no-store',
-  });
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || '';
+  
+  try {
+    const res = await fetch(`${baseUrl}/data.json`, {
+      cache: 'no-store',
+    });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch tiles');
+    if (!res.ok) return [];
+
+    const data = await res.json();
+    return Array.isArray(data) ? data : (data.tiles || []);
+    
+  } catch (error) {
+    return [];
   }
-
-  return res.json();
 }

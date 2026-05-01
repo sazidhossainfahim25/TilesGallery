@@ -3,7 +3,7 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 const MarqueeTex = async () => {
-  const data = await getTiles('http://127.0.0.1:5000/tiles');
+  const data = await getTiles() || [];
 
   return (
     <div className=" container">

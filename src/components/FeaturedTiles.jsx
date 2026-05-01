@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const FeaturedTiles = async () => {
   try {
-    const data = await getTiles('http://127.0.0.1:5000/tiles');
+    const data = await getTiles();
 
     const featured = data.slice(0, 4);
 
