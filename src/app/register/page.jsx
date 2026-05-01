@@ -5,6 +5,7 @@ import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -24,12 +25,16 @@ const RegisterPage = () => {
       image,
     });
 
-    if (!error) {
-      router.push('/');
-    } else {
-      alert(error.message || 'Something went wrong!');
-    }
+  if (error) {
+    toast.error(error.message || 'Register failed!');
+  } else {
+    toast.success('Registration Successful');
+    router.push('/');
+  }
   };
+    const handlGoogleLogin = async() =>{
+        await authClient.signIn.social({ provider: 'google' });
+    }
 
   return (
     <div className="min-h-screen py-10 lg:py-10 flex items-center justify-center relative overflow-hidden bg-[url('/images/bg-2.jpg')] bg-cover bg-center">
@@ -106,9 +111,7 @@ const RegisterPage = () => {
               <button
                 className="btn btn-outline bg-white hover:bg-gray-100 w-full flex items-center justify-center gap-2 border-gray-300"
                 type="button"
-                onClick={async () => {
-                  await authClient.signIn.social({ provider: 'google' });
-                }}
+                onClick={handlGoogleLogin}
               >
                 <FcGoogle className="text-xl" />
                 <span className="text-black">Login with Google</span>
