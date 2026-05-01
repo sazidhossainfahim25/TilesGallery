@@ -34,3 +34,62 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+```
+tiles-gallery
+├─ .prettierignore
+├─ .prettierrc
+├─ db.json
+├─ eslint.config.mjs
+├─ jsconfig.json
+├─ next.config.mjs
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ favicon.jpg
+│  ├─ images
+│  │  ├─ banner1.jpg
+│  │  └─ banner2.jpg
+│  ├─ logo.png
+│  └─ logo1.png
+├─ README.md
+└─ src
+   ├─ app
+   │  ├─ (auth)
+   │  │  ├─ register
+   │  │  │  └─ page.jsx
+   │  │  └─ signin
+   │  │     └─ page.jsx
+   │  ├─ allTiles
+   │  │  └─ page.jsx
+   │  ├─ favicon.ico
+   │  ├─ globals.css
+   │  ├─ layout.js
+   │  ├─ page.js
+   │  ├─ profile
+   │  │  ├─ page.jsx
+   │  │  └─ update
+   │  │     └─ page.jsx
+   │  └─ tile
+   │     └─ [id]
+   │        └─ page.jsx
+   ├─ components
+   │  ├─ cards
+   │  │  └─ TileCard.jsx
+   │  ├─ FeaturedTiles.jsx
+   │  ├─ home
+   │  │  ├─ Banner.jsx
+   │  │  └─ MarqueeTex.jsx
+   │  ├─ shared
+   │  │  ├─ Footer.jsx
+   │  │  ├─ MyLink.jsx
+   │  │  └─ Navbar.jsx
+   │  └─ UI
+   ├─ context
+   └─ lib
+      ├─ auth.js
+      ├─ getTiles.js
+      └─ mongodb.js
+
+```

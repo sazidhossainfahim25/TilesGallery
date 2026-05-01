@@ -8,14 +8,14 @@ const FeaturedTiles = async () => {
     const featured = data.slice(0, 4);
 
     return (
-      <section className="py-16 bg-[#fff]">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className=" py-5">
+        <div className="max-w-7xl mx-auto px-4  rounded-xl p-10">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-primary">Featured Tiles</h2>
+            <h2 className="text-3xl font-bold text-primary uppercase">Featured Tiles</h2>
             <p className="text-gray-500 mt-2">Explore our most popular selections</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 rounded  ">
             {featured.map((tile) => (
               <div
                 key={tile.id}
@@ -29,13 +29,16 @@ const FeaturedTiles = async () => {
                   />
                 </figure>
 
-                <div className="p-5 bg-[#e2dede] text-white">
+                <div className="p-5 bg-black/20 text-[#0F172A] rounded-b shadow">
                   <h2 className="font-bold text-lg truncate">{tile.title}</h2>
                   <p className="text-xs uppercase">{tile.category}</p>
                   <p className="text-sm font-semibold mt-1">${tile.price}</p>
 
                   <div className="mt-4">
-                    <Link href={`/tile/${tile.id}`} className="btn btn-primary btn-sm w-full">
+                    <Link
+                      href={`/all-tiles/tile/${tile.id}`}
+                      className="btn btn-primary btn-sm w-full"
+                    >
                       View Details
                     </Link>
                   </div>

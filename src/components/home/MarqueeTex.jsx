@@ -6,14 +6,14 @@ const MarqueeTex = async () => {
   const data = await getTiles('http://127.0.0.1:5000/tiles');
 
   return (
-    <div className="lg:py-6 py-1 md:py-4 bg-linear-to-r from-[#fff] via-[#faccb2] to-[#fff]">
-      <Marquee speed={50} gradient={true} gradientWidth={50}>
+    <div className=" container">
+      <Marquee speed={50} gradient={false} gradientWidth={50}>
         {data?.map((tile) => (
           <span
             key={tile.id}
-            className="text-[16px] sm:text-2xl md:text-4xl font-bold text-black uppercase mx-4 md:mx-9"
+            className="text-[16px] sm:text-2xl md:text-4xl font-bold text-[#FFf] uppercase mx-4 md:mx-9 opacity-60"
           >
-            {tile.title}
+            New Arrivals: {tile.title}
           </span>
         ))}
       </Marquee>

@@ -12,11 +12,11 @@ const Navbar = () => {
       text: 'Home',
     },
     {
-      path: '/allTiles',
+      path: '/all-tiles',
       text: 'All Tiles',
     },
     {
-      path: '/profile',
+      path: '/my-profile',
       text: 'My Profile',
     },
   ];
@@ -78,7 +78,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="btn rounded-full bg-white/10 border-white/20 shadow-lg text-white"
           >
-            <Link href="/">SignIn</Link>
+            <Link href="/login">logIn</Link>
           </motion.button>
 
           <motion.button
@@ -86,7 +86,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="btn rounded-full bg-white/10 border-white/20 shadow-lg text-white"
           >
-            <Link href="/">SignUp</Link>
+            <Link href="/register">Register</Link>
           </motion.button>
         </div>
       </div>
