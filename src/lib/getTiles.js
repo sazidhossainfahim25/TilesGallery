@@ -1,5 +1,5 @@
 export async function getTiles() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://tiles-gallery-beryl.vercel.app';
+  const baseUrl = process.env.BETTER_AUTH_URL || 'https://tiles-gallery-beryl.vercel.app';
 
   try {
     const res = await fetch(`${baseUrl}/data.json`, {
