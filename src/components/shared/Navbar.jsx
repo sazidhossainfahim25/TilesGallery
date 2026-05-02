@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
+import { CgLogIn } from 'react-icons/cg';
+import { BiLogOut } from 'react-icons/bi';
 
 const Navbar = () => {
   const router = useRouter();
@@ -86,7 +88,7 @@ const Navbar = () => {
                 href="/login"
                 className="btn btn-sm md:btn-md rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20"
               >
-                Log In
+                Login <CgLogIn />
               </Link>
             </motion.div>
           ) : (
@@ -115,7 +117,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
                 className="btn btn-sm md:btn-md rounded-full bg-red-500/20 border-red-500/40 text-red-200 hover:bg-red-500/40 transition-all"
               >
-                Log Out
+                LogOut <BiLogOut />
               </motion.button>
             </div>
           )}

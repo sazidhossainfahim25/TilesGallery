@@ -17,7 +17,8 @@ const TileDetailsPage = async ({ params }) => {
 
   return (
     <div className="max-w-7xl mx-auto p-6 md:p-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start p-10 bg-white/50 rounded  shadow-2xl">
+       <h2>TILES GALLARY</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start p-10 bg-white rounded shadow-2xl">
         {/* Left: Large High-Res Preview */}
         <div className="w-full ">
           <div className="overflow-hidden rounded-2xl shadow-2xl bg-gray-100">

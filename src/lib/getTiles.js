@@ -6,13 +6,11 @@ export async function getTiles() {
       cache: 'no-store',
     });
     if (!res.ok) {
-      console.error(`Fetch failed with status: ${res.status}`);
       return [];
     }
     const data = await res.json();
     return Array.isArray(data) ? data : data.tiles || [];
   } catch (error) {
-    console.error('Fetch error:', error);
     return [];
   }
 }

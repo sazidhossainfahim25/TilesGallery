@@ -81,8 +81,7 @@ const RegisterPage = () => {
                 name="image"
                 type="text"
                 className="input input-bordered w-full bg-white/80 focus:bg-white transition-all text-black"
-                placeholder="https://example.com/image.jpg"
-                required
+                placeholder="image url"
               />
             </div>
 

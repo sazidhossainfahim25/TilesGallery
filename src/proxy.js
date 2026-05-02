@@ -13,5 +13,5 @@ return NextResponse.redirect(new URL('/login', request.url));
 }
  
 export const config = {
-  matcher: ['/my-profile', '/all-tiles/:path'],
+  matcher: ['/my-profile', '/all-tiles/:path*'],
 };
