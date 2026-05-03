@@ -55,7 +55,7 @@ const AllTilesPage = () => {
           {filteredTiles.map((tile) => (
             <div key={tile.id} className="  shadow-md hover:shadow-xl rounded bg-white transition">
               {/*  Image */}
-              <figure className="h-48 overflow-hidden rounded">
+              <figure className="h-48 overflow-hidden rounded-t">
                 <img
                   src={tile.image}
                   alt={tile.title}
@@ -69,10 +69,10 @@ const AllTilesPage = () => {
 
                 <p className="text-sm text-gray-500">{tile.category}</p>
 
-                <div className="mt-4 bg-green-500">
+                <div className="mt-4 ">
                   <Link
                     href={`/all-tiles/tile/${tile.id}`}
-                    className="btn bg-[#FF5F00] text-white  btn-sm w-full"
+                    className="btn bg-[#FF5F00] text-white rounded-sm  btn-sm w-full"
                   >
                     Details
                   </Link>
