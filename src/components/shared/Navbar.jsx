@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost bg-white/20 lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost text-white lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -53,7 +53,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-black/20 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {navItems.map((item, index) => (
                 <MyLink key={index} href={item.path}>

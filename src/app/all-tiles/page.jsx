@@ -49,16 +49,13 @@ const AllTilesPage = () => {
 
       {/*  Tiles Grid */}
       {filteredTiles.length === 0 ? (
-        <p className="text-center text-gray-500">No tiles found </p>
+        <p className="text-center text-gray-500">No tiles found</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredTiles.map((tile) => (
-            <div
-              key={tile.id}
-              className="  shadow-md hover:shadow-xl rounded-b bg-white transition"
-            >
+            <div key={tile.id} className="  shadow-md hover:shadow-xl rounded bg-white transition">
               {/*  Image */}
-              <figure className="h-48 overflow-hidden rounded-t-2xl">
+              <figure className="h-48 overflow-hidden rounded">
                 <img
                   src={tile.image}
                   alt={tile.title}
@@ -75,7 +72,7 @@ const AllTilesPage = () => {
                 <div className="mt-4 bg-green-500">
                   <Link
                     href={`/all-tiles/tile/${tile.id}`}
-                    className="btn btn-primary btn-sm w-full"
+                    className="btn bg-[#FF5F00] text-white  btn-sm w-full"
                   >
                     Details
                   </Link>

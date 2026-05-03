@@ -29,7 +29,7 @@ const FeaturedTiles = async () => {
                   />
                 </figure>
 
-                <div className="p-5 bg-black/20 text-[#0F172A] rounded-b shadow">
+                <div className="p-5 bg-white text-[#0F172A] rounded-b shadow">
                   <h2 className="font-bold text-lg truncate">{tile.title}</h2>
                   <p className="text-xs uppercase">{tile.category}</p>
                   <p className="text-sm font-semibold mt-1">${tile.price}</p>
@@ -37,7 +37,7 @@ const FeaturedTiles = async () => {
                   <div className="mt-4">
                     <Link
                       href={`/all-tiles/tile/${tile.id}`}
-                      className="btn btn-primary btn-sm w-full"
+                      className="btn bg-[#FF5F00] text-white  btn-sm w-full"
                     >
                       View Details
                     </Link>
