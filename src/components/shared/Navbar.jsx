@@ -8,6 +8,7 @@ import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { CgLogIn } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
+import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
 const Navbar = () => {
   const router = useRouter();
@@ -18,6 +19,7 @@ const Navbar = () => {
     { path: '/', text: 'Home' },
     { path: '/all-tiles', text: 'All Tiles' },
     { path: '/my-profile', text: 'My Profile' },
+    { path: '/price', text: 'Price' },
   ];
 
   const handleLogout = async () => {
@@ -31,93 +33,98 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#0F172A] backdrop-blur-md border-b border-white/20 shadow-lg">
-      <div className="navbar max-w-7xl mx-auto">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#0F172A] backdrop-blur-xl border-b border-white/10 shadow-2xl">
+      <div className="navbar max-w-7xl mx-auto px-4 lg:px-8">
+        {/* Navbar Start */}
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost text-white lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+            <div tabIndex={0} role="button" className="btn btn-ghost text-white lg:hidden p-0 mr-4">
+              <HiOutlineMenuAlt3 className="text-2xl" />
             </div>
             <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-black/20 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-[#0F172A] rounded-2xl z-[1] mt-4 w-60 p-4 shadow-2xl border border-white/10 backdrop-blur-2xl"
             >
               {navItems.map((item, index) => (
-                <MyLink key={index} href={item.path}>
-                  <span className="flex items-center gap-2 font-semibold ">
-                    {item.text}
-                  </span>
-                </MyLink>
+                <li key={index} className="mb-1">
+                  <MyLink href={item.path}>
+                    <span className="text-white/80 hover:text-orange-500 font-medium py-2 transition-colors">
+                      {item.text}
+                    </span>
+                  </MyLink>
+                </li>
               ))}
             </ul>
           </div>
-          <div>
-            <Image src="/logo1.png" alt="logo" width={70} height={70} className="object-contain" />
-          </div>
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Image
+              src="/logo1.png"
+              alt="Tiles Gallery Logo"
+              width={60}
+              height={60}
+              className="object-contain"
+            />
+          </Link>
         </div>
 
+        {/* Navbar Center */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="flex items-center gap-8">
             {navItems.map((item, index) => (
-              <MyLink key={index} href={item.path}>
-                <span className="flex items-center gap-2 text-[16px] font-semibold ">
-                  {item.text}
-                </span>
-              </MyLink>
+              <li key={index}>
+                <MyLink href={item.path}>
+                  <span className="text-white/70 hover:text-white text-sm font-bold uppercase tracking-widest transition-all duration-300">
+                    {item.text}
+                  </span>
+                </MyLink>
+              </li>
             ))}
           </ul>
         </div>
 
-        <div className="navbar-end gap-2">
+        {/* Navbar End */}
+        <div className="navbar-end gap-4">
           {!user ? (
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/login"
-                className="btn btn-sm md:btn-md rounded-full bg-white border-white/20 t hover:bg-white/20"
+                className="btn btn-sm md:btn-md rounded-full bg-orange-600 hover:bg-orange-700 border-none text-white px-6 shadow-lg transition-all"
               >
-                Login <CgLogIn />
+                Login <CgLogIn className="text-lg" />
               </Link>
             </motion.div>
           ) : (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
+              {/* Profile Avatar */}
               <div className="avatar">
-                <div className="w-10 h-10 rounded-full ring ring-white/20 overflow-hidden relative bg-white/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full ring-2 ring-white/20 overflow-hidden relative shadow-inner">
                   {user?.image || user?.picture ? (
                     <Image
                       src={user.image || user.picture}
-                      alt="User Avatar"
+                      alt="Profile"
                       fill
                       referrerPolicy="no-referrer"
                       className="object-cover"
                     />
                   ) : (
-                    <span className=" font-bold uppercase pointer-events-none">
+                    <div className="w-full h-full bg-orange-600 flex items-center justify-center text-white font-black">
                       {user?.name?.charAt(0) || 'U'}
-                    </span>
+                    </div>
                   )}
                 </div>
               </div>
 
+              {/* Logout Button */}
               <motion.button
                 onClick={handleLogout}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn btn-sm md:btn-md rounded-full bg-red-500 border-red-500/40 text-white hover:bg-red-500 transition-all"
+                className="btn btn-sm md:btn-md rounded-full bg-red-600 hover:bg-red-700 border-none text-white px-3 shadow-lg flex items-center gap-1 transition-all"
               >
-                LogOut <BiLogOut />
+                <span className="sm:inline font-smibold text-[12px] tracking-wider">
+                  Logout
+                </span>
+                <BiLogOut />
               </motion.button>
             </div>
           )}
