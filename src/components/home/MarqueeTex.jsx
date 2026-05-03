@@ -3,17 +3,16 @@ import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 const MarqueeTex = async () => {
-  const data = await getTiles() || [];
+  const data = await getTiles();
 
   return (
-    <div className=" p-2 lg:p-6 bg-gradient-to-r from-[#ffffff] to-[#f8e8e8] to-[#ffffff] ">
-      <Marquee speed={50} gradient={true} gradientWidth={50}>
+    <div className="lg:p-8 p-4 mt-4 backdrop-blur-md border-amber-50 bg-gradient-to-r from-[#fdfbfb] via-[#fffbeb] to-[#fdfbfb] ">
+      <Marquee speed={60} gradient={false} pauseOnHover={true}>
         {data?.map((tile) => (
           <span
             key={tile.id}
-            className="text-[16px] sm:text-2xl md:text-4xl font-bold text-[#000] uppercase mx-4 md:mx-9 opacity-40"
+            className="text-xl sm:text-xl md:text-4xl font-extrabold text-black uppercase mx-6 md:mx-12 opacity-20 hover:opacity-100 transition-opacity duration-500 cursor-default tracking-tighter"
           >
-            {' '}
             {tile.title}
           </span>
         ))}

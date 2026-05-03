@@ -11,7 +11,9 @@ const FeaturedTiles = async () => {
       <section className=" py-5">
         <div className="max-w-7xl mx-auto px-4  rounded-xl p-10">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary uppercase">Featured Tiles</h2>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-orange-500 leading-tight">
+              Featured Tiles
+            </h2>
             <p className="text-gray-500 mt-2">Explore our most popular selections</p>
           </div>
 

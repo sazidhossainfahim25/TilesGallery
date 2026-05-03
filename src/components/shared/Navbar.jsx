@@ -31,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/20 shadow-lg">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#0F172A] backdrop-blur-md border-b border-white/20 shadow-lg">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -57,7 +57,7 @@ const Navbar = () => {
             >
               {navItems.map((item, index) => (
                 <MyLink key={index} href={item.path}>
-                  <span className="flex items-center gap-2 font-semibold text-white">
+                  <span className="flex items-center gap-2 font-semibold ">
                     {item.text}
                   </span>
                 </MyLink>
@@ -73,7 +73,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
             {navItems.map((item, index) => (
               <MyLink key={index} href={item.path}>
-                <span className="flex items-center gap-2 text-[16px] font-semibold text-white">
+                <span className="flex items-center gap-2 text-[16px] font-semibold ">
                   {item.text}
                 </span>
               </MyLink>
@@ -86,7 +86,7 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/login"
-                className="btn btn-sm md:btn-md rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20"
+                className="btn btn-sm md:btn-md rounded-full bg-white border-white/20 t hover:bg-white/20"
               >
                 Login <CgLogIn />
               </Link>
@@ -104,7 +104,7 @@ const Navbar = () => {
                       className="object-cover"
                     />
                   ) : (
-                    <span className="text-white font-bold uppercase pointer-events-none">
+                    <span className=" font-bold uppercase pointer-events-none">
                       {user?.name?.charAt(0) || 'U'}
                     </span>
                   )}
@@ -115,7 +115,7 @@ const Navbar = () => {
                 onClick={handleLogout}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn btn-sm md:btn-md rounded-full bg-red-500/20 border-red-500/40 text-red-200 hover:bg-red-500/40 transition-all"
+                className="btn btn-sm md:btn-md rounded-full bg-red-500 border-red-500/40 text-white hover:bg-red-500 transition-all"
               >
                 LogOut <BiLogOut />
               </motion.button>

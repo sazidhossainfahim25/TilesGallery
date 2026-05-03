@@ -14,7 +14,7 @@ const MyLink = ({ href, children }) => {
       className={`font-semibold  transition-all
         px-2 py-1 
         
-        ${isActive ? 'text-[#FFD400]  border-[#FFD400] border-b-2 ' : 'text-white '}`}
+        ${isActive ? 'text-orange-500 border-[#e1810b] border-b-2 ' : 'text-white'}`}
     >
       {children}
     </Link>
