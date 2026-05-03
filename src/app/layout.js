@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen flex flex-col bg-[#FFFFFF]">
         <Navber />
 
-        <main className="flex-1 pt-20">{children}</main>
+        <main className="flex-1">{children}</main>
 
         <Footer />
         <Toaster position="top-center" reverseOrder={false} />
