@@ -55,7 +55,7 @@ const AllTilesPage = () => {
           {filteredTiles.map((tile) => (
             <div
               key={tile.id}
-              className="  shadow-md hover:shadow-xl transition"
+              className="  shadow-md hover:shadow-xl rounded-b bg-white transition"
             >
               {/*  Image */}
               <figure className="h-48 overflow-hidden rounded-t-2xl">
