@@ -15,7 +15,8 @@ const Banner = () => {
         </p>
 
         <button className="mt-8 px-10 py-4 bg-[#FF5F00] text-white font-bold uppercase tracking-widest rounded-2xl hover:bg-[#FF5F00] transition-all shadow-xl active:scale-95">
-          <Link href="/all-tiles">Browse Now</Link>
+          <Link
+           href="/all-tiles">Browse Now</Link>
         </button>
       </div>
     </div>

@@ -11,7 +11,7 @@ const MarqueeTex = async () => {
         {data?.map((tile) => (
           <span
             key={tile.id}
-            className="text-[16px] sm:text-2xl md:text-4xl font-bold text-[#FFf] uppercase mx-4 md:mx-9 opacity-60"
+            className="text-[16px] sm:text-2xl md:text-4xl font-bold text-[#000] uppercase mx-4 md:mx-9 opacity-40"
           >
             {' '}
             {tile.title}
