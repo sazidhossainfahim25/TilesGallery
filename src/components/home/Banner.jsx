@@ -1,9 +1,9 @@
+import Link from 'next/link';
 import React from 'react';
-import MarqueeTex from './MarqueeTex';
 
 const Banner = () => {
   return (
-    <div className="h-[450px] md:h-[600px] flex items-center justify-center relative overflow-hidden bg-[url('/images/banner1.jpg')] bg-cover bg-center">
+    <div className="h-150 md:h-200 flex items-center justify-center relative overflow-hidden bg-[url('/images/banner1.jpg')] bg-cover bg-center">
       <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center px-6">
         <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-tight">
           Discover Your <br />
@@ -15,11 +15,8 @@ const Banner = () => {
         </p>
 
         <button className="mt-8 px-10 py-4 bg-[#FF5F00] text-white font-bold uppercase tracking-widest rounded-2xl hover:bg-[#FF5F00] transition-all shadow-xl active:scale-95">
-          Browse Now
+          <Link href="/all-tiles">Browse Now</Link>
         </button>
-      </div>
-      <div className="absolute bottom-3 ">
-        <MarqueeTex />
       </div>
     </div>
   );
