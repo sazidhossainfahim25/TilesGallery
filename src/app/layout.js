@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-[#0F172A]">
+      <body className="min-h-screen flex flex-col bg-[#FFFFFF]">
         <Navber />
 
         <main className="flex-1 pt-20">{children}</main>

@@ -8,10 +8,9 @@ const UserProfilePage = () => {
 
   return (
     <div className=" py-10 lg:py-10 flex items-center justify-center">
-
       <div className="w-full max-w-[80%] sm:max-w-md lg:max-w-xl mx-auto">
         <div className="bg-white  backdrop-blur-md rounded-xl border border-white/20 shadow-2xl overflow-hidden">
-          <form className="p-6 sm:p-8 lg:p-10 flex flex-col items-center lg:gap-4 gap-1">
+          <form className="p-6 sm:p-8 bg-[#0F172A] lg:p-10 flex flex-col items-center lg:gap-4 gap-1">
             <div className="avatar">
               <div className="w-24 h-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden relative bg-white/10 flex items-center justify-center">
                 {user?.image || user?.picture ? (
