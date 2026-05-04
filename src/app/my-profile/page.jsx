@@ -31,7 +31,7 @@ const UserProfilePage = () => {
 
   return (
     <section className="pt-20 bg-amber-50 min-h-screen relative">
-      <div className="py-10 lg:py-20 flex items-center justify-center">
+      <div className="py-5 lg:py-10 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
