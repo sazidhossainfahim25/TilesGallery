@@ -30,7 +30,7 @@ const UserProfilePage = () => {
   };
 
   return (
-    <section className="pt-20 bg-amber-50 min-h-screen relative">
+    <section className="pt-20 bg-amber-50  relative">
       <div className="py-5 lg:py-10 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
