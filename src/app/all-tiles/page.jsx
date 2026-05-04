@@ -64,7 +64,9 @@ const AllTilesPage = () => {
           >
             POPULAR TILES GALLERY
           </motion.h2>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} 
+            className="text-[18px] text-gray-200 "
+            >
             Explore our most popular Tiles
           </motion.p>
 
