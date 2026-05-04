@@ -62,7 +62,7 @@ const UserProfilePage = () => {
               </motion.div>
               <div className='text-center space-y-1 mt-2'>
                 <h2 className="text-white text-2xl font-bold">{user?.name}</h2>
-                <h2 className="text-white text-[12px] font-samibold">hi{user?.email}</h2>
+                <h2 className="text-white text-[12px] font-samibold">{user?.email}</h2>
               </div>
 
               {/* Edit Profile Button Trigger */}
