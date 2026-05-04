@@ -17,7 +17,7 @@ const AllTilesPage = () => {
         const data = await getTiles();
         setTiles(data);
       } catch (error) {
-        console.error('Error fetching tiles:', error);
+        toast.error( 'Error fetching tiles');
       } finally {
         setLoading(false);
       }
